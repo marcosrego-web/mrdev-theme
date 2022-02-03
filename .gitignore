@@ -1,0 +1,5 @@
+vendor/composer
+vendor/bin
+vendor/autoload.php
+vendor/**/.git
+mrdev-framework_wp
