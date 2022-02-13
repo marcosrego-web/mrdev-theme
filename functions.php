@@ -10,7 +10,7 @@
  */
 
 if ( !is_dir( WP_PLUGIN_DIR.'/mrdev-framework_wp' ) ) {
-	include 'mrdev-framework_wp/mrdev-framework_wp.php';
+	include 'vendor/marcosrego-web/mrdev-framework_wp/mrdev-framework_wp.php';
 }
 
 if ( ! function_exists( 'mrdev_support' ) ) :

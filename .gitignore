@@ -1,5 +1,4 @@
-vendor/composer
-vendor/bin
-vendor/autoload.php
-vendor/**/.git
+vendor
 mrdev-framework_wp
+composer.json
+composer.lock
