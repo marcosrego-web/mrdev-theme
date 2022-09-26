@@ -9,9 +9,26 @@
  * @since Mr.Dev.'s Framework 1.0
  */
 
-if ( !is_dir( WP_PLUGIN_DIR.'/mrdev-framework_wp' ) ) {
-	include 'vendor/marcosrego-web/mrdev-framework_wp/mrdev-framework_wp.php';
-}
+/*MR.DEV'S OPTIONS*/
+	/*Optionally include Mr.Dev's Framework inside the theme*/
+	if ( !is_dir( WP_PLUGIN_DIR.'/mrdev-framework_wp' ) ) {
+		include 'vendor/marcosrego-web/mrdev-framework_wp/mrdev-framework_wp.php';
+	}
+	
+	/*Updates*/
+	require 'plugin-update-checker/plugin-update-checker.php';
+	$myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
+		'https://github.com/marcosrego-web/mrdev-theme/',
+		__FILE__,
+		'mrdev-theme'
+	);
+	global $mrdev_config_betatest;
+	if($mrdev_config_betatest === 1) {
+		$myUpdateChecker->setBranch('develop');
+	} else {
+		$myUpdateChecker->setBranch('master');
+	}
+/*END OF MR.DEV'S OPTIONS*/
 
 if ( ! function_exists( 'mrdev_support' ) ) :
 
