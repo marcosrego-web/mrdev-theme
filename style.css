@@ -7,7 +7,7 @@ Description: Mr.Dev. is your provider of developing tools! He gives you a boiler
 Requires at least: 5.9
 Tested up to: 5.9
 Requires PHP: 5.6
-Version: 0.9.459
+Version: 0.9.468
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: mrdev-framework_wp
@@ -152,37 +152,75 @@ body > .is-root-container > .wp-block-template-part > .wp-block-cover,
 
 /* 2022 Theme changes
 --------------------------------------------- */
-.wp-site-blocks,
-body > .is-root-container,
-.edit-post-visual-editor__post-title-wrapper,
-.wp-block-group.alignfull,
-.wp-block-group.has-background,
-.wp-block-cover.alignfull,
-.is-root-container .wp-block[data-align="full"] > .wp-block-group,
-.is-root-container .wp-block[data-align="full"] > .wp-block-cover {
-  padding-left: var(--wp--custom--spacing--padding, var(--padding, 0.75rem));
-  padding-right: var(--wp--custom--spacing--padding, var(--padding, 0.75rem));
+.wp-site-blocks.mr-padding,
+body > .is-root-container.mr-padding,
+.edit-post-visual-editor__post-title-wrapper.mr-padding,
+.wp-block-group.alignfull.mr-padding,
+.wp-block-group.has-background.mr-padding,
+.wp-block-cover.alignfull.mr-padding,
+.is-root-container .wp-block[data-align="full"] > .wp-block-group.mr-padding,
+.is-root-container .wp-block[data-align="full"] > .wp-block-cover.mr-padding {
+  padding: var(--padding);
+}
+.wp-site-blocks.mr-paddingleft,
+body > .is-root-container.mr-paddingleft,
+.edit-post-visual-editor__post-title-wrapper.mr-paddingleft,
+.wp-block-group.alignfull.mr-paddingleft,
+.wp-block-group.has-background.mr-paddingleft,
+.wp-block-cover.alignfull.mr-paddingleft,
+.is-root-container
+  .wp-block[data-align="full"]
+  > .wp-block-group.mr-paddingleft,
+.is-root-container
+  .wp-block[data-align="full"]
+  > .wp-block-cover.mr-paddingleft {
+  padding-left: var(--padding);
 }
 
-.wp-site-blocks .alignfull,
-.wp-site-blocks > .wp-block-group.has-background,
-.wp-site-blocks > .wp-block-cover,
-.wp-site-blocks > .wp-block-template-part > .wp-block-group.has-background,
-.wp-site-blocks > .wp-block-template-part > .wp-block-cover,
-body > .is-root-container > .wp-block-group.has-background,
-body > .is-root-container > .wp-block-cover,
+.wp-site-blocks.mr-paddingright,
+body > .is-root-container.mr-paddingright,
+.edit-post-visual-editor__post-title-wrapper.mr-paddingright,
+.wp-block-group.alignfull.mr-paddingright,
+.wp-block-group.has-background.mr-paddingright,
+.wp-block-cover.alignfull.mr-paddingright,
+.is-root-container
+  .wp-block[data-align="full"]
+  > .wp-block-group.mr-paddingright,
+.is-root-container
+  .wp-block[data-align="full"]
+  > .wp-block-cover.mr-paddingright {
+  padding-right: var(--padding);
+}
+
+.wp-site-blocks .alignfull:is(.mr-padding, .mr-paddingleft, .mr-paddingright),
+.wp-site-blocks
+  > .wp-block-group.has-background:is(.mr-padding, .mr-paddingleft, .mr-paddingright),
+.wp-site-blocks
+  > .wp-block-cover:is(.mr-padding, .mr-paddingleft, .mr-paddingright),
+.wp-site-blocks
+  > .wp-block-template-part
+  > .wp-block-group.has-background:is(.mr-padding, .mr-paddingleft, .mr-paddingright),
+.wp-site-blocks
+  > .wp-block-template-part
+  > .wp-block-cover:is(.mr-padding, .mr-paddingleft, .mr-paddingright),
+body
+  > .is-root-container
+  > .wp-block-group.has-background:is(.mr-padding, .mr-paddingleft, .mr-paddingright),
+body
+  > .is-root-container
+  > .wp-block-cover:is(.mr-padding, .mr-paddingleft, .mr-paddingright),
 body
   > .is-root-container
   > .wp-block-template-part
-  > .wp-block-group.has-background,
-body > .is-root-container > .wp-block-template-part > .wp-block-cover,
-.is-root-container .wp-block[data-align="full"] {
-  margin-left: calc(
-    -1 * var(--wp--custom--spacing--padding, var(--padding, 0.75rem))
-  ) !important;
-  margin-right: calc(
-    -1 * var(--wp--custom--spacing--padding, var(--padding, 0.75rem))
-  ) !important;
+  > .wp-block-group.has-background:is(.mr-padding, .mr-paddingleft, .mr-paddingright),
+body
+  > .is-root-container
+  > .wp-block-template-part
+  > .wp-block-cover:is(.mr-padding, .mr-paddingleft, .mr-paddingright),
+.is-root-container
+  .wp-block[data-align="full"]:is(.mr-padding, .mr-paddingleft, .mr-paddingright) {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
 }
 
 .wp-block-search__button,
@@ -195,96 +233,28 @@ body > .is-root-container > .wp-block-template-part > .wp-block-cover,
     --wp--preset--color--main-background-color,
     var(--main-background-color)
   );
-  font-size: var(
-    --wp--preset--font-size--font-size-4,
-    var(--font-size-4, 1rem)
-  );
+  font-size: var(--wp--preset--font-size--font-size-4, var(--font-size-4));
 }
 
 .wp-block-navigation__responsive-container.is-menu-open {
-  padding-top: var(--wp--custom--spacing--padding, var(--padding, 0.75rem));
-  padding-bottom: var(--wp--custom--spacing--padding, var(--padding, 0.75rem));
-  padding-right: var(--wp--custom--spacing--padding, var(--padding, 0.75rem));
-  padding-left: var(--wp--custom--spacing--padding, var(--padding, 0.75rem));
+  padding-top: var(--wp--custom--spacing--padding, var(--padding));
+  padding-bottom: var(--wp--custom--spacing--padding, var(--padding));
+  padding-right: var(--wp--custom--spacing--padding, var(--padding));
+  padding-left: var(--wp--custom--spacing--padding, var(--padding));
 }
 
-/* Blocks styles
---------------------------------------------- */
-:root {
-  --gallery-block--gutter-size: var(--padding, 1.5rem);
-  --wp--style--block-gap: var(--padding, 1.5rem);
-}
-html {
-  height: 100%;
-  font-size: var(--base, 100%);
-  -ms-text-size-adjust: 100%;
-  text-size-adjust: 100%;
-}
-.wp-block-image {
-  margin-bottom: var(--padding, 1.5rem);
-}
-.wp-block-columns {
-  margin-bottom: var(--padding, 1.5rem);
-}
-.wp-block-latest-posts.is-grid li {
-  margin: 0 var(--padding, 1.5rem) var(--padding, 1.5rem) 0;
-}
-.wp-block-post-template.is-flex-container,
-.wp-block-query-loop.is-flex-container,
-body .wp-block-buttons {
-  gap: var(--padding, 1.5rem);
-}
-.blocks-gallery-grid .blocks-gallery-image figcaption,
-.blocks-gallery-grid .blocks-gallery-item figcaption,
-.wp-block-gallery .blocks-gallery-image figcaption,
-.wp-block-gallery .blocks-gallery-item figcaption,
-.wp-block-gallery.has-nested-images figure.wp-block-image figcaption {
-  font-size: var(--font-size-4, 1rem);
-}
-@media (min-width: 600px) {
-  .wp-block-post-template.is-flex-container.is-flex-container.columns-2 > li,
-  .wp-block-query-loop.is-flex-container.is-flex-container.columns-2 > li {
-    width: calc(50% - (var(--margin, calc(0.625em * 2)) / 2));
-  }
-  .wp-block-post-template.is-flex-container.is-flex-container.columns-3 > li,
-  .wp-block-query-loop.is-flex-container.is-flex-container.columns-3 > li {
-    width: calc(33.33333% - (var(--margin, calc(0.83333em * 2)) / 2));
-  }
-  .wp-block-post-template.is-flex-container.is-flex-container.columns-4 > li,
-  .wp-block-query-loop.is-flex-container.is-flex-container.columns-4 > li {
-    width: calc(25% - (var(--margin, calc(0.9375em * 2)) / 2));
-  }
-  .wp-block-post-template.is-flex-container.is-flex-container.columns-5 > li,
-  .wp-block-query-loop.is-flex-container.is-flex-container.columns-5 > li {
-    width: calc(20% - (var(--margin, calc(1em * 2)) / 2));
-  }
-  .wp-block-post-template.is-flex-container.is-flex-container.columns-6 > li,
-  .wp-block-query-loop.is-flex-container.is-flex-container.columns-6 > li {
-    width: calc(16.66666% - (var(--margin, calc(1.04167em * 2)) / 2));
-  }
-}
-@media (min-width: 782px) {
-  .wp-block-column:not(:first-child) {
-    margin-left: var(--padding, 1.5rem);
-  }
-}
-@media (min-width: 600px) and (max-width: 781px) {
-  .wp-block-column:nth-child(2n) {
-    margin-left: var(--padding, 1.5rem);
-  }
-}
-@media (min-width: 600px) and (max-width: 781px) {
-  .wp-block-column:not(:only-child) {
-    flex-basis: calc(50% - (var(--padding, 1.5rem) / 2)) !important;
-    flex-grow: 0;
-  }
-}
-/* Mr.Utils and Mr.Dev's default styles
+/* 
+ * Mr.Utils and Mr.Dev's default styles
+ * 
+ * Colors (except offcanvas) and Fonts were not automatically included, to give priority to selecting colors and fonts on the Full Site Editor.
+ * Font sizes were included to Headings, the FSE does not currently have a way to globally define different font-sizes depending of the Heading number.
+ * 
   --------------------------------------------- */
 body {
-  font-family: var(--font-2, "Arial,Helvetica Neue,Helvetica");
-  font-size: var(--font-size-4, 1rem);
-  line-height: var(--line-height, "1.25");
+  --gallery-block--gutter-size: var(--padding);
+  --wp--style--block-gap: var(--gap);
+  font-family: var(--font-2);
+  font-size: var(--font-size-4);
 }
 h1,
 h2,
@@ -292,160 +262,90 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: var(
-    --font-1,
-    "TimesNewRoman,Times New Roman,Times,Baskerville,Georgia,serif"
-  );
+  font-family: var(--font-1);
 }
 h1 {
-  font-size: var(--font-size-7, 2rem);
+  font-size: var(--font-size-7);
 }
 h2 {
-  font-size: var(--font-size-6, 1.125rem);
+  font-size: var(--font-size-6);
 }
 h3 {
-  font-size: var(--font-size-5, 1.17rem);
+  font-size: var(--font-size-5);
 }
 h4 {
-  font-size: var(--font-size-3, 0.875rem);
+  font-size: var(--font-size-3);
 }
 h5 {
-  font-size: var(--font-size-2, 0.75rem);
+  font-size: var(--font-size-2);
 }
 h6 {
-  font-size: var(--font-size-1, 0.625rem);
+  font-size: var(--font-size-1);
 }
-.mr-container {
-  max-width: var(--container);
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: var(--padding, 0.75rem);
-  padding-right: var(--padding, 0.75rem);
-}
-body {
+.wp-block-navigation:not(.has-background)
+  .wp-block-navigation__responsive-container.is-menu-open {
+  background-color: #fff;
   background-color: var(
-    --wp--preset--color--background-color,
-    var(--background-color)
+    --offcanvas-background-color,
+    var(--background-color, #fff)
   );
+  color: #000;
+  color: var(--offcanvas-text-color, var(--text-color, #000));
 }
-body,
-h1:not(.has-text-color),
-h2:not(.has-text-color),
-h3:not(.has-text-color),
-h4:not(.has-text-color),
-h5:not(.has-text-color),
-h6:not(.has-text-color) {
-  color: var(--wp--preset--color--text-color, var(--text-color));
+/* Blocks styles
+--------------------------------------------- */
+html {
+  height: 100%;
+  font-size: var(--base, 100%);
+  -ms-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
-.mr-header,
-.post-template .wp-site-blocks > header,
-.page-template .wp-site-blocks > header {
-  background-color: var(
-    --wp--preset--color--header-background-color,
-    var(--header-background-color)
-  );
+.wp-block-image {
+  margin-bottom: var(--padding);
 }
-.mr-header,
-.mr-header h1:not(.has-text-color),
-.mr-header h2:not(.has-text-color),
-.mr-header h3:not(.has-text-color),
-.mr-header h4:not(.has-text-color),
-.mr-header h5:not(.has-text-color),
-.mr-header h6:not(.has-text-color),
-.mr-header a:not(.has-text-color),
-.post-template .wp-site-blocks > header h1:not(.has-text-color),
-.post-template .wp-site-blocks > header h2:not(.has-text-color),
-.post-template .wp-site-blocks > header h3:not(.has-text-color),
-.post-template .wp-site-blocks > header h4:not(.has-text-color),
-.post-template .wp-site-blocks > header h5:not(.has-text-color),
-.post-template .wp-site-blocks > header h6:not(.has-text-color),
-.post-template .wp-site-blocks > header a:not(.has-text-color),
-.page-template .wp-site-blocks > header h1:not(.has-text-color),
-.page-template .wp-site-blocks > header h2:not(.has-text-color),
-.page-template .wp-site-blocks > header h3:not(.has-text-color),
-.page-template .wp-site-blocks > header h4:not(.has-text-color),
-.page-template .wp-site-blocks > header h5:not(.has-text-color),
-.page-template .wp-site-blocks > header h6:not(.has-text-color),
-.page-template .wp-site-blocks > header a:not(.has-text-color) {
-  color: var(--wp--preset--color--header-text-color, var(--header-text-color));
+.wp-block-columns {
+  margin-bottom: var(--padding);
 }
-.mr-main,
-.post-template .wp-site-blocks > main,
-.page-template .wp-site-blocks > main {
-  background: var(
-    --wp--preset--color--main-background-color,
-    var(--main-background-color)
-  );
+.wp-block-latest-posts.is-grid li {
+  margin: 0 var(--padding) var(--padding) 0;
 }
-.mr-main,
-.mr-main h1:not(.has-text-color),
-.mr-main h2:not(.has-text-color),
-.mr-main h3:not(.has-text-color),
-.mr-main h4:not(.has-text-color),
-.mr-main h5:not(.has-text-color),
-.mr-main h6:not(.has-text-color),
-.mr-main a:not(.has-text-color),
-.post-template .wp-site-blocks > main h1:not(.has-text-color),
-.post-template .wp-site-blocks > main h2:not(.has-text-color),
-.post-template .wp-site-blocks > main h3:not(.has-text-color),
-.post-template .wp-site-blocks > main h4:not(.has-text-color),
-.post-template .wp-site-blocks > main h5:not(.has-text-color),
-.post-template .wp-site-blocks > main h6:not(.has-text-color),
-.post-template .wp-site-blocks > main a:not(.has-text-color),
-.page-template .wp-site-blocks > main h1:not(.has-text-color),
-.page-template .wp-site-blocks > main h2:not(.has-text-color),
-.page-template .wp-site-blocks > main h3:not(.has-text-color),
-.page-template .wp-site-blocks > main h4:not(.has-text-color),
-.page-template .wp-site-blocks > main h5:not(.has-text-color),
-.page-template .wp-site-blocks > main h6:not(.has-text-color),
-.page-template .wp-site-blocks > main a:not(.has-text-color) {
-  color: var(--wp--preset--color--main-text-color, var(--main-text-color));
+.wp-block-post-template.is-flex-container,
+.wp-block-query-loop.is-flex-container,
+body .wp-block-buttons {
+  gap: var(--gap);
 }
-.mr-aside {
-  background-color: var(
-    --wp--preset--color--aside-background-color,
-    var(--aside-background-color)
-  );
+.blocks-gallery-grid .blocks-gallery-image figcaption,
+.blocks-gallery-grid .blocks-gallery-item figcaption,
+.wp-block-gallery .blocks-gallery-image figcaption,
+.wp-block-gallery .blocks-gallery-item figcaption,
+.wp-block-gallery.has-nested-images figure.wp-block-image figcaption {
+  font-size: var(--font-size-4);
 }
-.mr-aside,
-.mr-aside h1:not(.has-text-color),
-.mr-aside h2:not(.has-text-color),
-.mr-aside h3:not(.has-text-color),
-.mr-aside h4:not(.has-text-color),
-.mr-aside h5:not(.has-text-color),
-.mr-aside h6:not(.has-text-color),
-.mr-aside a:not(.has-text-color) {
-  color: var(--wp--preset--color--aside-text-color, var(--aside-text-color));
+@media (min-width: 600px) {
+  .wp-block-post-template.is-flex-container.is-flex-container.columns-2 > li,
+  .wp-block-query-loop.is-flex-container.is-flex-container.columns-2 > li {
+    width: calc(50% - var(--gap));
+  }
+  .wp-block-post-template.is-flex-container.is-flex-container.columns-3 > li,
+  .wp-block-query-loop.is-flex-container.is-flex-container.columns-3 > li {
+    width: calc(33.33333% - var(--gap));
+  }
+  .wp-block-post-template.is-flex-container.is-flex-container.columns-4 > li,
+  .wp-block-query-loop.is-flex-container.is-flex-container.columns-4 > li {
+    width: calc(25% - var(--gap));
+  }
+  .wp-block-post-template.is-flex-container.is-flex-container.columns-5 > li,
+  .wp-block-query-loop.is-flex-container.is-flex-container.columns-5 > li {
+    width: calc(20% - var(--gap));
+  }
+  .wp-block-post-template.is-flex-container.is-flex-container.columns-6 > li,
+  .wp-block-query-loop.is-flex-container.is-flex-container.columns-6 > li {
+    width: calc(16.66666% - var(--gap));
+  }
 }
-.mr-footer,
-.post-template .wp-site-blocks > footer,
-.page-template .wp-site-blocks > footer {
-  background-color: var(
-    --wp--preset--color--footer-background-color,
-    var(--footer-background-color)
-  );
-}
-.mr-footer,
-.mr-footer h1:not(.has-text-color),
-.mr-footer h2:not(.has-text-color),
-.mr-footer h3:not(.has-text-color),
-.mr-footer h4:not(.has-text-color),
-.mr-footer h5:not(.has-text-color),
-.mr-footer h6:not(.has-text-color),
-.mr-footer a:not(.has-text-color),
-.post-template .wp-site-blocks > footer h1:not(.has-text-color),
-.post-template .wp-site-blocks > footer h2:not(.has-text-color),
-.post-template .wp-site-blocks > footer h3:not(.has-text-color),
-.post-template .wp-site-blocks > footer h4:not(.has-text-color),
-.post-template .wp-site-blocks > footer h5:not(.has-text-color),
-.post-template .wp-site-blocks > footer h6:not(.has-text-color),
-.post-template .wp-site-blocks > footer a:not(.has-text-color),
-.page-template .wp-site-blocks > footer h1:not(.has-text-color),
-.page-template .wp-site-blocks > footer h2:not(.has-text-color),
-.page-template .wp-site-blocks > footer h3:not(.has-text-color),
-.page-template .wp-site-blocks > footer h4:not(.has-text-color),
-.page-template .wp-site-blocks > footer h5:not(.has-text-color),
-.page-template .wp-site-blocks > footer h6:not(.has-text-color),
-.page-template .wp-site-blocks > footer a:not(.has-text-color) {
-  color: var(--wp--preset--color--footer-text-color, var(--footer-text-color));
+@media (min-width: 600px) and (max-width: 781px) {
+  .wp-block-column:not(:only-child) {
+    flex-basis: calc(50% - var(--gap)) !important;
+    flex-grow: 0;
+  }
 }
