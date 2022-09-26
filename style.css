@@ -246,8 +246,8 @@ body
 /* 
  * Mr.Utils and Mr.Dev's default styles
  * 
- * Colors (except offcanvas) and Fonts were not automatically included, to give priority to selecting colors and fonts on the Full Site Editor.
- * Font sizes were included to Headings, the FSE does not currently have a way to globally define different font-sizes depending of the Heading number.
+ * Colors (except offcanvas) were not automatically included, to give priority to selecting colors on the Full Site Editor.
+ * Fonts and font-sizes were included because the FSE does not currently have a way to globally define different fonts or font-sizes depending of the Heading number.
  * 
   --------------------------------------------- */
 body {
