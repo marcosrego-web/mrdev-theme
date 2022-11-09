@@ -7,7 +7,7 @@ Description: Mr.Dev. is your provider of developing tools! He gives you a boiler
 Requires at least: 5.9
 Tested up to: 5.9
 Requires PHP: 5.6
-Version: 0.9.468
+Version: 0.9.473
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: mrdev-framework_wp
@@ -112,7 +112,6 @@ body > .is-root-container,
 .wp-site-blocks > .wp-block-cover,
 .wp-site-blocks > .wp-block-template-part > .wp-block-group.has-background,
 .wp-site-blocks > .wp-block-template-part > .wp-block-cover,
-body > .is-root-container > .wp-block-group.has-background,
 body > .is-root-container > .wp-block-cover,
 body
   > .is-root-container
@@ -212,10 +211,6 @@ body
 body
   > .is-root-container
   > .wp-block-template-part
-  > .wp-block-group.has-background:is(.mr-padding, .mr-paddingleft, .mr-paddingright),
-body
-  > .is-root-container
-  > .wp-block-template-part
   > .wp-block-cover:is(.mr-padding, .mr-paddingleft, .mr-paddingright),
 .is-root-container
   .wp-block[data-align="full"]:is(.mr-padding, .mr-paddingleft, .mr-paddingright) {
@@ -300,18 +295,21 @@ html {
   -ms-text-size-adjust: 100%;
   text-size-adjust: 100%;
 }
-.wp-block-image {
-  margin-bottom: var(--padding);
+.wp-block-post-featured-image {
+  margin-top: 0;
+  margin-bottom: 0;
 }
-.wp-block-columns {
-  margin-bottom: var(--padding);
+.wp-block-columns,
+.wp-block-image {
+  margin-bottom: 0;
 }
 .wp-block-latest-posts.is-grid li {
   margin: 0 var(--padding) var(--padding) 0;
 }
 .wp-block-post-template.is-flex-container,
 .wp-block-query-loop.is-flex-container,
-body .wp-block-buttons {
+body .wp-block-buttons,
+:where(.wp-block-columns.is-layout-flex) {
   gap: var(--gap);
 }
 .blocks-gallery-grid .blocks-gallery-image figcaption,
