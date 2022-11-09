@@ -7,7 +7,7 @@ Description: Mr.Dev. is your provider of developing tools! He gives you a boiler
 Requires at least: 5.9
 Tested up to: 5.9
 Requires PHP: 5.6
-Version: 0.9.472
+Version: 0.9.473
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: mrdev-framework_wp
@@ -308,7 +308,8 @@ html {
 }
 .wp-block-post-template.is-flex-container,
 .wp-block-query-loop.is-flex-container,
-body .wp-block-buttons {
+body .wp-block-buttons,
+:where(.wp-block-columns.is-layout-flex) {
   gap: var(--gap);
 }
 .blocks-gallery-grid .blocks-gallery-image figcaption,
