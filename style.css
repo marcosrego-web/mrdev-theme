@@ -7,7 +7,7 @@ Description: Mr.Dev. is your provider of developing tools! He gives you a boiler
 Requires at least: 5.9
 Tested up to: 5.9
 Requires PHP: 5.6
-Version: 0.9.476
+Version: 0.9.477
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: mrdev-framework_wp
@@ -193,18 +193,30 @@ body > .is-root-container.mr-paddingright,
 
 .wp-site-blocks .alignfull:is(.mr-padding, .mr-paddingleft, .mr-paddingright),
 .wp-site-blocks
-  > .wp-block-group.has-background:is(.mr-padding, .mr-paddingleft, .mr-paddingright),
+  > .wp-block-group.has-background:is(
+    .mr-padding,
+    .mr-paddingleft,
+    .mr-paddingright
+  ),
 .wp-site-blocks
   > .wp-block-cover:is(.mr-padding, .mr-paddingleft, .mr-paddingright),
 .wp-site-blocks
   > .wp-block-template-part
-  > .wp-block-group.has-background:is(.mr-padding, .mr-paddingleft, .mr-paddingright),
+  > .wp-block-group.has-background:is(
+    .mr-padding,
+    .mr-paddingleft,
+    .mr-paddingright
+  ),
 .wp-site-blocks
   > .wp-block-template-part
   > .wp-block-cover:is(.mr-padding, .mr-paddingleft, .mr-paddingright),
 body
   > .is-root-container
-  > .wp-block-group.has-background:is(.mr-padding, .mr-paddingleft, .mr-paddingright),
+  > .wp-block-group.has-background:is(
+    .mr-padding,
+    .mr-paddingleft,
+    .mr-paddingright
+  ),
 body
   > .is-root-container
   > .wp-block-cover:is(.mr-padding, .mr-paddingleft, .mr-paddingright),
@@ -213,7 +225,11 @@ body
   > .wp-block-template-part
   > .wp-block-cover:is(.mr-padding, .mr-paddingleft, .mr-paddingright),
 .is-root-container
-  .wp-block[data-align="full"]:is(.mr-padding, .mr-paddingleft, .mr-paddingright) {
+  .wp-block[data-align="full"]:is(
+    .mr-padding,
+    .mr-paddingleft,
+    .mr-paddingright
+  ) {
   margin-left: 0 !important;
   margin-right: 0 !important;
 }
@@ -320,9 +336,9 @@ body .is-layout-flex {
 .wp-block-gallery.has-nested-images figure.wp-block-image figcaption {
   font-size: var(--font-size-4);
 }
-body .is-layout-flow > * + *,
-body .is-layout-constrained > * + *,
-.wp-site-blocks > * + * {
+body .is-layout-flow > * + *:not([class*="margintop"]),
+body .is-layout-constrained > * + *:not([class*="margintop"]),
+.wp-site-blocks > * + *:not([class*="margintop"]) {
   margin-block-start: var(--margin, 24px);
 }
 :where(.wp-block-group.has-background) {
