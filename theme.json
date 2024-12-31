@@ -6,6 +6,12 @@
           "customGradient": false,
           "defaultPalette":false,
           "defaultGradients":false
+       },
+       "typography" : {
+          "defaultFontSizes": false
+       },
+       "spacing": { 
+          "defaultSpacingSizes": false
        }
     }
  }
