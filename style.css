@@ -7,7 +7,7 @@ Description: Mr.Dev. is your provider of developing tools! He gives you a boiler
 Requires at least: 5.9
 Tested up to: 5.9
 Requires PHP: 5.6
-Version: 0.9.481
+Version: 0.9.482
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: mrdev-framework_wp
@@ -281,7 +281,6 @@ h4,
 h5,
 h6 {
   font-family: var(--font-1);
-  font-weight: inherit; /* Remove browser's default font-weight. Bold can be added via the block editor  */
 }
 h1 {
   font-size: var(--font-size-7);
