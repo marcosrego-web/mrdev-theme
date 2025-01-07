@@ -7,7 +7,7 @@ Description: Mr.Dev. is your provider of developing tools! He gives you a boiler
 Requires at least: 5.9
 Tested up to: 5.9
 Requires PHP: 5.6
-Version: 0.9.480
+Version: 0.9.481
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: mrdev-framework_wp
@@ -255,6 +255,13 @@ body
 }
 
 /* 
+ * Browser default changes
+ * 
+  --------------------------------------------- */
+
+/* Remove bold from Headings, let that be decided on the block editor */
+
+/* 
  * Mr.Utils and Mr.Dev's default styles
  * 
  * Colors (except offcanvas) were not automatically included, to give priority to selecting colors on the Full Site Editor.
@@ -274,6 +281,7 @@ h4,
 h5,
 h6 {
   font-family: var(--font-1);
+  font-weight: inherit; /* Remove browser's default font-weight. Bold can be added via the block editor  */
 }
 h1 {
   font-size: var(--font-size-7);
